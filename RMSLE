@@ -1,0 +1,42 @@
+******************************* RMSLE Score of different algorithms *********************************
+
+-----------------Random Forests Regressor-------------------
+Rf=RandomForestRegressor()
+Rf.fit(X_train,y_train)
+y_pred=Rf.predict(X_test)
+y_pred[y_pred<0]=0
+print('r2_score: ',r2_score(y_test,y_pred))
+print('RMSLE: ', 100*np.sqrt(mean_squared_log_error(y_test, y_pred)))
+----rmsle score----
+RMSLE:  50.04230984725133
+
+--------------------Linear Regression------------------------
+Lr=LinearRegression()
+Lr.fit(X_train,y_train)
+y_pred=Lr.predict(X_test)
+y_pred[y_pred<0]=0
+print('r2_score: ',r2_score(y_test,y_pred))
+print('RMSLE: ', 100*np.sqrt(mean_squared_log_error(y_test, y_pred)))
+----rmsle score----
+RMSLE:  142.2220860532986
+
+---------------------Gradient Boosting Regressor--------------------
+GB=GradientBoostingRegressor()
+GB.fit(X_train,y_train)
+y_pred=GB.predict(X_test)
+y_pred[y_pred<0]=0
+print('r2_score: ',r2_score(y_test,y_pred))
+print('RMSLE: ', 100*np.sqrt(mean_squared_log_error(y_test, y_pred)))
+----rmsle score----
+RMSLE:  90.6508657553129
+
+-----------------------XgBoosts Regressor---------------------------
+xgb=XGBRegressor()
+xgb.fit(X_train,y_train)
+y_pred=xgb.predict(X_test)
+y_pred[y_pred<0]=0
+print('r2_score: ',r2_score(y_test,y_pred))
+print('RMSLE: ', 100*np.sqrt(mean_squared_log_error(y_test, y_pred)))
+----rmsle score----
+RMSLE:  85.02765088608959
+
